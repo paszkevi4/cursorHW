@@ -1,47 +1,50 @@
 import React from 'react';
-import s from './hw6.module.sass';
+import { useState } from 'react';
+import { Card } from './Card';
+import store from '../../Store/store';
+import {
+  getSubjects,
+  getAverageMark,
+  getStudentInfo,
+  getStudentsNames,
+  getBestStudent,
+  calculateWordLetters,
+} from './functions';
 
 export const HomeWork6 = () => {
+  let state = store.hw6;
+  let [sorted, setSorted] = useState(false);
+  const clickHandler = () => {
+    setSorted(!sorted);
+  };
+  const wordForCalcs = 'aaabcccc';
+
   return (
-    <div>
-      <div className={s.dropdown}>
-        <button className="dropbtn">Dropdown</button>
-        <div className="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-      <ul class="collapsible">
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">filter_drama</i>First
-          </div>
-          <div class="collapsible-body">
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
-        </li>
-        <li class="active">
-          <div class="collapsible-header">
-            <i class="material-icons">place</i>Second
-          </div>
-          <div class="collapsible-body">
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header">
-            <i class="material-icons">whatshot</i>Third
-          </div>
-          <div class="collapsible-body">
-            <span>Lorem ipsum dolor sit amet.</span>
-          </div>
-        </li>
-      </ul>
+    <div className="row">
+      <Card
+        title="Students"
+        text={getStudentsNames(state.students, sorted)}
+        clickHandler={clickHandler}
+        bestStudent={getBestStudent(state.students)}
+      />
+      {state.students.map((el) => {
+        return (
+          <Card
+            title={el.name}
+            text={[
+              `subjects:  ${getSubjects(el)}`,
+              `average:  ${getAverageMark(el)}`,
+              ...Object.entries(getStudentInfo(el)),
+            ]}
+            hide={true}
+          />
+        );
+      })}
+      <Card
+        title="Counter"
+        text={[wordForCalcs, ...Object.entries(calculateWordLetters(wordForCalcs))]}
+        hide={true}
+      />
     </div>
   );
 };
-
-document.addEventListener('DOMContentLoaded', function () {
-  var elems = document.querySelectorAll('.dropdown-trigger');
-});

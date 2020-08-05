@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <div className="main">
         <Route path="/hw1" render={() => <HomeWork1 />} />
-        <Route path="/hw2" render={() => <HomeWork2 />} />
+        <Route path="/hw2" render={() => <HomeWork1 />} />
         <Route path="/hw3" render={() => <HomeWork3 />} />
         <Route path="/hw4" render={() => <HomeWork4 />} />
         <Route path="/hw6" render={() => <HomeWork6 />} />

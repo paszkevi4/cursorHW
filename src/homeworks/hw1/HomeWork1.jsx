@@ -1,5 +1,6 @@
 import React from 'react';
-import { functions } from './functionsHW1.js';
+import { Card } from '../../components/common/Card';
+import { functions } from './functions.js';
 
 const APPLE_PRICE = 15.678;
 const FUEL_PRICE = 123.965;
@@ -30,19 +31,23 @@ prices.average = functions.averageCount(basicPrices);
 prices.newPrice = functions.newPriceCount(prices.totalPrice, prices.discount);
 prices.profit = functions.profitCount(prices.newPrice, prices.totalPrice);
 
+const arrToShow = [
+  ['Максимальна ціна:', prices.theBiggestOne],
+  ['Мінімальна ціна:', prices.theLowestOne],
+  ['Вартість всіх товарів:', prices.totalPrice],
+  ['Округлена ціла частина:', prices.totalPriceFloor],
+  ['Сума товарів округлена до сотень:', prices.totalPriceRounded],
+  ['Чи є сума всіх товарів парним числом:', prices.isEven ? 'так' : 'ні'],
+  ['Решта:', prices.customerChange],
+  ['Середнє значення цін:', prices.average],
+  ['Нова ціна:', prices.newPrice],
+  ['Чистий прибуток:', prices.profit],
+];
+
 export const HomeWork1 = () => {
   return (
     <div>
-      Максимальна ціна: {prices.theBiggestOne} <br />
-      Мінімальна ціна: {prices.theLowestOne} <br />
-      Вартість всіх товарів: {prices.totalPrice} <br />
-      Округлена ціла частина: {prices.totalPriceFloor} <br />
-      Сума товарів округлена до сотень: {prices.totalPriceRounded} <br />
-      Чи є сума всіх товарів парним числом: {prices.isEven ? 'так' : 'ні'} <br />
-      Решта: {prices.customerChange} <br />
-      Середнє значення цін: {prices.average} <br />
-      Нова ціна: {prices.newPrice} <br />
-      Чистий прибуток: {prices.profit}
+      <Card title="HW#1" text={arrToShow} hide={true} />
     </div>
   );
 };

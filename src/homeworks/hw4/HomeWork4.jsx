@@ -1,57 +1,66 @@
-import React from 'react'
+import React from 'react';
+import { Card } from '../../components/common/Card';
 
-const students = ["Олександр", "Ігор", "Олена", "Іра", "Олексій", "Світлана"];
-const themes = ["Диференційне рівняння", "Теорія автоматів", "Алгоритми і структури даних"];
+const students = ['Олександр', 'Ігор', 'Олена', 'Іра', 'Олексій', 'Світлана'];
+const themes = ['Диференційне рівняння', 'Теорія автоматів', 'Алгоритми і структури даних'];
 const marks = [4, 5, 5, 3, 4, 5];
+
 const themedPairs = [];
+const markedStudents = [];
+let markedPairs = [];
 
 const getPairs = () => {
-    const pairs = []
-    let j = 0
-    for ( let i = 0; i < students.length; i++) {
-        if ( students[i] == 'Олександр' || students[i] == 'Ігор' || students[i] == 'Олексій' ) {
-            pairs.push([students[i]])
-        } else {
-            pairs[j].push(students[i])
-            j++
-        }
+  const pairs = [];
+  let j = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i] == 'Олександр' || students[i] == 'Ігор' || students[i] == 'Олексій') {
+      pairs.push([students[i]]);
+    } else {
+      pairs[j].push(students[i]);
+      j++;
     }
-    return pairs
-}
+  }
+  return pairs;
+};
 
 const combiner = (pairs, themes) => {
-    for ( let i = 0; i < pairs.length ; i++) {
-        const pairString = pairs[i].join(' та ')
-        themedPairs.push([pairString, themes[i]])
-    }
-    return themedPairs
-}
+  for (let i = 0; i < pairs.length; i++) {
+    const pairString = pairs[i].join(' та ');
+    themedPairs.push([pairString, themes[i]]);
+  }
+  return themedPairs;
+};
 
-const markStudents = () => {
-    const marked = []
-    students.map( (el) => {marked.push([el, marks[students.indexOf(el)]])} )
-    return marked
-}
+const markStudents = (marked) => {
+  students.map((el) => {
+    marked.push([el, marks[students.indexOf(el)]]);
+  });
+  return marked;
+};
 
+const markPairs = (pairs) => {
+  markedPairs = JSON.parse(JSON.stringify(pairs));
+  markedPairs.map((el) => {
+    el.push(Math.ceil(Math.random() * 5));
+  });
+  return markedPairs;
+};
 
-/*---------------------------------------переделать----------------------------------*/
-const markPairs = () => {
-    let finalResult = []
-    themedPairs.map( el => { finalResult.push(el) })
-    finalResult.map( el => {el.push(Math.ceil(Math.random() * 5)) })
-    return finalResult
-}
-/*---------------------------------------переделать----------------------------------*/
+console.log(
+  'newMade',
+  getPairs(),
+  combiner(getPairs(), themes),
+  markStudents(markedStudents),
+  markPairs(themedPairs),
+);
 
-console.log( 'newMade', getPairs(), combiner(getPairs(), themes), markStudents(), markPairs() )
-console.log( 'beginning', students, themes, marks, themedPairs )
-
-
+console.log('curr', markedPairs);
 
 export const HomeWork4 = () => {
-    return (
-        <div>
-            {/*{DER}*/}
-        </div>
-    )
-}
+  return (
+    <div>
+      <Card title="Students" text={markedStudents} hide={true} />
+      <Card title="Pairs" text={markedPairs} hide={true} />
+    </div>
+  );
+};
