@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Redirect } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { TBA } from './homeworks/TBA';
 import { HomeWork1 } from './homeworks/hw1/HomeWork1';
@@ -10,7 +10,7 @@ import { HomeWork6 } from './homeworks/hw6/HomeWork6';
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <div className="main">
         <Route path="/hw1" render={() => <HomeWork1 />} />
@@ -20,7 +20,7 @@ function App() {
         <Route path="/hw6" render={() => <HomeWork6 />} />
         <Redirect to="/me" render={() => <TBA />} />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
