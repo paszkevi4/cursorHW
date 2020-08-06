@@ -10,15 +10,18 @@ import { HomeWork6 } from './homeworks/hw6/HomeWork6';
 
 function App() {
   return (
-    <HashRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Navbar />
       <div className="main">
         <Route path="/hw1" render={() => <HomeWork1 />} />
         <Route path="/hw2" render={() => <HomeWork1 />} />
         <Route path="/hw3" render={() => <HomeWork3 />} />
         <Route path="/hw4" render={() => <HomeWork4 />} />
+        <Route path="/hw5" render={() => <HomeWork1 />} />
         <Route path="/hw6" render={() => <HomeWork6 />} />
-        <Redirect to="/me" render={() => <TBA />} />
+        <Route exact path="/">
+          <Redirect to="/me" render={() => <TBA />} />
+        </Route>
       </div>
     </HashRouter>
   );
