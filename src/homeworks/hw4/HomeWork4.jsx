@@ -54,8 +54,6 @@ console.log(
   markPairs(themedPairs),
 );
 
-console.log('curr', markedPairs);
-
 export const HomeWork4 = () => {
   return (
     <div>

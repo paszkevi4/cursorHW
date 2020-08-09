@@ -31,6 +31,11 @@ let store = {
       },
     ],
   },
+  hw7: {
+    ukraine: { tax: 0.195, middleSalary: 1789, vacancies: 11476 },
+    latvia: { tax: 0.25, middleSalary: 1586, vacancies: 3921 },
+    litva: { tax: 0.15, middleSalary: 1509, vacancies: 1114 },
+  },
 };
 
 export default store;
