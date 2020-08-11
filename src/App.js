@@ -8,6 +8,7 @@ import { HomeWork3 } from './homeworks/hw3/HomeWork3';
 import { HomeWork4 } from './homeworks/hw4/HomeWork4';
 import { HomeWork6 } from './homeworks/hw6/HomeWork6';
 import { HomeWork7 } from './homeworks/hw7/HomeWork7';
+import { HomeWork9 } from './homeworks/hw9/HomeWork9';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/hw5" render={() => <HomeWork1 />} />
         <Route path="/hw6" render={() => <HomeWork6 />} />
         <Route path="/hw7" render={() => <HomeWork7 />} />
+        <Route path="/hw9" render={() => <HomeWork9 />} />
         <Route exact path="/">
           <Redirect to="/me" render={() => <TBA />} />
         </Route>

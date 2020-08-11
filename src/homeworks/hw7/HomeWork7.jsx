@@ -17,7 +17,7 @@ export const HomeWork7 = () => {
 
   const myTaxesAcrosCountries = countries.map((country) => (
     <Card
-      title={`My axes in ${namePrettier(country)}`}
+      title={`My taxes in ${namePrettier(country)}`}
       text={`$ ${getMyTaxes.call(
         state[country],
         mySalary,
@@ -51,9 +51,3 @@ export const HomeWork7 = () => {
     </div>
   );
 };
-
-// // Створіть функцію getMySalary(country) – яка буде писати
-// в консоль об'єкт виду: { salary: number, taxes: number, profit: number } кожні 10 секунд.
-// Значення salary – генеруйте випадковим чином у діапазоні 1500-2000.
-// taxes – розраховується в залежності від вибраної країни та значення salary.
-// profit = salary - taxes;

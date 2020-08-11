@@ -36,6 +36,22 @@ let store = {
     latvia: { tax: 0.25, middleSalary: 1586, vacancies: 3921 },
     litva: { tax: 0.15, middleSalary: 1509, vacancies: 1114 },
   },
+  hw9: {
+    grandSquare: new Array(5).fill(null).map(() => new Array(5).fill(null)),
+    colors: [
+      'white',
+      'red',
+      'orange',
+      'yellow',
+      'lime',
+      'green',
+      'blue',
+      'navy',
+      'purple',
+      'fuchsia',
+      'black',
+    ],
+  },
 };
 
 export default store;

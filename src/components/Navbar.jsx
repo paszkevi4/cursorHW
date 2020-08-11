@@ -35,6 +35,11 @@ export const Navbar = (props) => {
           hw#7
         </NavLink>
       </div>
+      <div className="nav-li">
+        <NavLink to="/hw9" activeClassName="active">
+          hw#9
+        </NavLink>
+      </div>
     </nav>
   );
 };
