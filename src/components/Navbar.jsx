@@ -36,6 +36,11 @@ export const Navbar = (props) => {
         </NavLink>
       </div>
       <div className="nav-li">
+        <NavLink to="/hw8" activeClassName="active">
+          hw#8
+        </NavLink>
+      </div>
+      <div className="nav-li">
         <NavLink to="/hw9" activeClassName="active">
           hw#9
         </NavLink>

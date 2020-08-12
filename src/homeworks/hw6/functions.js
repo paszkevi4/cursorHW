@@ -22,7 +22,7 @@ export const getAverageMark = (student) => {
   return getAverage(...temp).toFixed(2);
 };
 
-const getAverage = (...numbers) => {
+export const getAverage = (...numbers) => {
   let sum = 0;
   numbers.map((el) => {
     sum += el;
