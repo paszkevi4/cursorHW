@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAverage } from '../hw6/functions';
 
 /*
 
@@ -23,11 +24,11 @@ fullName, вони передаються при створенні студен
 
 class Student {
   constructor(props) {
-    (this.university = props.university),
-      (this.course = props.course),
-      (this.fullName = props.fullName),
-      (this._marks = []),
-      (this.expelled = false);
+    this.university = props.university;
+    this.course = props.course;
+    this.fullName = props.fullName;
+    this._marks = [];
+    this.expelled = false;
   }
 
   getInfo() {
@@ -90,6 +91,8 @@ const ostap = new BudgetStudent({
 });
 ostap.studentsMarks = [5, 4, 4, 5];
 
+window.ostap = ostap;
+
 export const HomeWork8 = () => {
-  return <div>c/o console</div>;
+  return <div>c/o for ostap in console</div>;
 };
