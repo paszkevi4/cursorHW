@@ -1,27 +1,6 @@
 import React from 'react';
 import { getAverage } from '../hw6/functions';
 
-/*
-
-У цьому завданні вам необхідно створити клас Student та розробляти методи всередині цього класу.
-
-
-
-У стдентів повинні бути наступні властивості: university, course, 
-fullName, вони передаються при створенні студента(в конструктор).
-
-Створіть метод this.getInfo() -> "Студент 1го курсу 
-Вищої Школи Психотерапії м.Одеса, Остап Родоманський Бендер", 
-метод повертає сукупну інформацію про курс, 
-учбовий заклад та імені студента.
-
-Створіть геттер оцінок this.marks, який повертає масив оцінок студента [5, 4, 4, 5]
-
-Створіть сеттер оцінок this.marks = 5, який дозволяє поставити оцінку студенту. Після того, як оцінка поставлена, геттер повинен повернути масив this.marks -> [5, 4, 4, 5, 5]
-
-
-*/
-
 class Student {
   constructor(props) {
     this.university = props.university;
@@ -75,7 +54,7 @@ class BudgetStudent extends Student {
     this.scholarship = 1400;
     setInterval(() => {
       this.getScholarship();
-    }, 2000);
+    }, 30000);
   }
   getScholarship() {
     if (!this.expelled && this.getAverageMark() >= 4) {
