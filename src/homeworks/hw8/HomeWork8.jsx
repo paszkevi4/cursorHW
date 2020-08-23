@@ -1,5 +1,6 @@
 import React from 'react';
 import { getAverage } from '../hw6/functions';
+import { Card } from '../../components/common/Card1';
 
 class Student {
   constructor(props) {
@@ -73,5 +74,12 @@ ostap.studentsMarks = [5, 4, 4, 5];
 window.ostap = ostap;
 
 export const HomeWork8 = () => {
-  return <div>c/o for ostap in console</div>;
+  return (
+    <div>
+      c/o for ostap in console
+      <div>{ostap.getInfo()}</div>
+      <div>{ostap.getAverageMark()}</div>
+      <Card title="title" text={['text', 'text1']} />
+    </div>
+  );
 };
