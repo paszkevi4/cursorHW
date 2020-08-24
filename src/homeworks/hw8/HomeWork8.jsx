@@ -75,7 +75,7 @@ window.ostap = ostap;
 
 export const HomeWork8 = () => {
   return (
-    <div>
+    <div className="row">
       c/o for ostap in console
       <div>{ostap.getInfo()}</div>
       <div>{ostap.getAverageMark()}</div>

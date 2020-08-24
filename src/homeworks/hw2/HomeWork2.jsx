@@ -1,18 +1,31 @@
-// import React from 'react';
-// import { functions } from './functions';
+import React from 'react';
+import { functions } from './functions';
+import { Card } from '../../components/common/Card1';
+import store from '../../Store/store';
+import { useState } from 'react';
 
-// const LOWER = functions.numberSetter('Від якого числа небхідно складати?');
-// let HIGHER = functions.numberSetter('До якого числа небхідно складати?');
-// const SKIP_EVEN = window.confirm('Чи потрібно пропускати парні числа?');
+export const HomeWork2 = () => {
+  const [lower, setNewLower] = useState(store.hw2.LOWER);
+  const [higher, setNewHigher] = useState(store.hw2.HIGHER);
+  const [skipEven, setNewSkip] = useState(store.hw2.SKIP_EVEN);
 
-// export const HomeWork2 = () => {
-//   return (
-//     <div>
-//       <h3>
-//         Сума всiх {SKIP_EVEN ? 'непарних' : ''}
-//         чисел від {LOWER} до {HIGHER}
-//         дорівнює {functions.counter(LOWER, HIGHER, SKIP_EVEN)}.{' '}
-//       </h3>
-//     </div>
-//   );
-// };
+  const clickHandler = () => {
+    setNewLower(functions.numberSetter('Від якого числа небхідно складати?'));
+    setNewHigher(functions.numberSetter('Do якого числа небхідно складати?'));
+    setNewSkip(window.confirm('Чи потрiбно пропускати парнi?'));
+  };
+
+  return (
+    <div className="row">
+      <Card
+        title="HW #2"
+        clickHandler={clickHandler}
+        text={[
+          `Сума всiх ${skipEven ? 'непарних' : ''} чисел`,
+          `від ${lower} до ${higher}`,
+          `дорівнює ${functions.counter(lower, higher, skipEven)}`,
+        ]}
+      />
+    </div>
+  );
+};

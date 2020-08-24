@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../../components/common/Card';
+import { Card } from '../../components/common/Card1';
 import { functions } from './functions.js';
 
 const APPLE_PRICE = 15.678;
@@ -32,10 +32,10 @@ prices.newPrice = functions.newPriceCount(prices.totalPrice, prices.discount);
 prices.profit = functions.profitCount(prices.newPrice, prices.totalPrice);
 
 const arrToShow = [
-  ['Максимальна ціна:', prices.theBiggestOne],
-  ['Мінімальна ціна:', prices.theLowestOne],
-  ['Вартість всіх товарів:', prices.totalPrice],
-  ['Округлена ціла частина:', prices.totalPriceFloor],
+  ['Максимальна ціна: ', prices.theBiggestOne],
+  ['Мінімальна ціна: ', prices.theLowestOne],
+  ['Вартість всіх товарів: ', prices.totalPrice],
+  ['Округлена ціла частина: ', prices.totalPriceFloor],
   ['Сума товарів округлена до сотень:', prices.totalPriceRounded],
   ['Чи є сума всіх товарів парним числом:', prices.isEven ? 'так' : 'ні'],
   ['Решта:', prices.customerChange],
@@ -46,8 +46,8 @@ const arrToShow = [
 
 export const HomeWork1 = () => {
   return (
-    <div>
-      <Card title="HW#1" text={arrToShow} hide={true} />
+    <div className="row">
+      <Card key="id1" title="HW #1" text={arrToShow} hide={true} />
     </div>
   );
 };

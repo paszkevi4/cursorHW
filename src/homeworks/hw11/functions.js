@@ -6,7 +6,10 @@ const delay = () => {
   );
 };
 
+let time = null;
+
 export const getRandomChinese = async (length) => {
+  time = Date.now();
   let result = [];
   try {
     for (let i = 0; i < length; i++) {
@@ -17,9 +20,12 @@ export const getRandomChinese = async (length) => {
   } catch {
     throw new Error('impossible error');
   } finally {
-    console.log(result.join(''));
+    console.log(`${result.join('')} за ${Date.now() - time} ms`);
     // return result.join('');
   }
 };
 
 getRandomChinese(4);
+
+// in case you want to run it in console
+window.getRandomChinese = getRandomChinese;

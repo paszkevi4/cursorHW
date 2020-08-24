@@ -12,7 +12,7 @@ export const Card = (props) => {
         <div className="card-content">
           <span className="card-title">{props.title}</span>
           {props.text.map((el) => {
-            console.log(el, props.bestStudent);
+            // console.log(el, props.bestStudent);
             return <p id={textId}>{Array.isArray(el) ? arrToStr(el) : el}</p>;
           })}
         </div>

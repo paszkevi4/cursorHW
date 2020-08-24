@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '../../components/common/Card';
+import { Card } from '../../components/common/Card1';
 
 const students = ['Олександр', 'Ігор', 'Олена', 'Іра', 'Олексій', 'Світлана'];
 const themes = ['Диференційне рівняння', 'Теорія автоматів', 'Алгоритми і структури даних'];
@@ -56,8 +56,8 @@ console.log(
 
 export const HomeWork4 = () => {
   return (
-    <div>
-      <Card title="Students" text={markedStudents} hide={true} />
+    <div className="row">
+      <Card title="Students with marks" text={markedStudents} hide={true} />
       <Card title="Pairs" text={markedPairs} hide={true} />
     </div>
   );

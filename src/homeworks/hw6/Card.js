@@ -19,7 +19,7 @@ export const Card = (props) => {
               <p id={textId}>
                 {Array.isArray(el) ? arrToStr(el) : el}
                 {props.bestStudent && el == props.bestStudent ? (
-                  <span class="new badge" data-badge-caption="Best student"></span>
+                  <span className="new badge" data-badge-caption="Best student"></span>
                 ) : (
                   ''
                 )}

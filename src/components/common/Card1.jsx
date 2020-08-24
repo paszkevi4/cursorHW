@@ -15,18 +15,27 @@ const BtnBlock = (props) => {
 };
 
 export const Card = (props) => {
-  const { title, text, hide } = props;
-  const innerText = text.map((el) => {
-    return <p>{el}</p>;
-  });
+  const { title, text, hide, clickHandler } = props;
+
+  const textToP = (Text) => {
+    return Text.map((el) => {
+      if (Array.isArray(el)) {
+        return <p>{textToP(el)}</p>;
+      } else {
+        return <span>{el + ' '}</span>;
+      }
+    });
+  };
+
+  const innerText = textToP(text);
   return (
     <div className="col s4">
       <div className="card ">
         <div className="card-content">
-          <span className="card-title">{title}</span>
+          <p className="card-title">{title}</p>
           {innerText}
         </div>
-        {hide ? ' ' : <BtnBlock />}
+        {hide ? ' ' : <BtnBlock clickHandler={clickHandler} />}
       </div>
     </div>
   );

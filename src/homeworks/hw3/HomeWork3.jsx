@@ -20,7 +20,7 @@ let Card = (props) => {
   const textId = 'card' + props.id;
   const btnId = 'btn' + props.id;
   return (
-    <div class="col s4">
+    <div className="col s4">
       <div className="card ">
         <div className="card-content">
           <span className="card-title">{props.title}</span>

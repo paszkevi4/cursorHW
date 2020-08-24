@@ -1,5 +1,10 @@
 let store = {
   hw1: {},
+  hw2: {
+    LOWER: 2,
+    HIGHER: 6,
+    SKIP_EVEN: false,
+  },
   hw6: {
     students: [
       {
