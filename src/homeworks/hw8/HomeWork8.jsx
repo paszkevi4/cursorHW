@@ -76,10 +76,10 @@ window.ostap = ostap;
 export const HomeWork8 = () => {
   return (
     <div className="row">
-      c/o for ostap in console
-      <div>{ostap.getInfo()}</div>
-      <div>{ostap.getAverageMark()}</div>
-      <Card title="title" text={['text', 'text1']} />
+      <Card
+        title={ostap.fullName}
+        text={[[ostap.getInfo()], ['average mark', ostap.getAverageMark()]]}
+      />
     </div>
   );
 };

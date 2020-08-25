@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { Card } from './Card';
+import { StudentsCard } from './Card';
+import { Card } from '../../components/common/Card1';
 import store from '../../Store/store';
 import {
   getSubjects,
@@ -21,7 +22,7 @@ export const HomeWork6 = () => {
 
   return (
     <div className="row">
-      <Card
+      <StudentsCard
         title="Students"
         text={getStudentsNames(state.students, sorted)}
         clickHandler={clickHandler}
@@ -33,8 +34,8 @@ export const HomeWork6 = () => {
             title={el.name}
             text={[
               `subjects:  ${getSubjects(el)}`,
-              `average:  ${getAverageMark(el)}`,
               ...Object.entries(getStudentInfo(el)),
+              `average:  ${getAverageMark(el)}`,
             ]}
             hide={true}
           />

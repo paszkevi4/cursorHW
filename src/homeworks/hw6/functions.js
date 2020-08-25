@@ -42,7 +42,6 @@ export const getStudentInfo = (student) => {
 
 /*-----4. Iмена студентів у алфавітному порядку-----*/
 export const getStudentsNames = (students, sorted) => {
-  console.log(sorted ? students.map((el) => el.name).sort() : students.map((el) => el.name));
   return sorted ? students.map((el) => el.name).sort() : students.map((el) => el.name);
 };
 
@@ -58,7 +57,6 @@ export const getBestStudent = (students) => {
     }
     return curr;
   });
-  console.log('best student', max.name);
   return max.name;
 };
 

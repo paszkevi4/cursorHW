@@ -2,7 +2,7 @@ import React from 'react';
 
 import './hw6.sass';
 
-export const Card = (props) => {
+export const StudentsCard = (props) => {
   const textId = 'card' + props.id;
   const btnId = 'btn' + props.id;
   const arrToStr = (arr) => {
@@ -10,7 +10,7 @@ export const Card = (props) => {
   };
   const names = ['subjects', 'average', 'info'];
   return (
-    <div className="col s6">
+    <div className="col s4">
       <div className="card ">
         <div className="card-content">
           <span className="card-title">{props.title}</span>
@@ -27,20 +27,16 @@ export const Card = (props) => {
             );
           })}
         </div>
-        {props.hide ? (
-          ' '
-        ) : (
-          <div className="card-action">
-            <a
-              id={btnId}
-              className="waves-effect green btn"
-              onClick={() => {
-                props.clickHandler();
-              }}>
-              В алфавiтному порядку
-            </a>
-          </div>
-        )}
+        <div className="card-action">
+          <a
+            id={btnId}
+            className="waves-effect green btn"
+            onClick={() => {
+              props.clickHandler();
+            }}>
+            В алфавiтному порядку
+          </a>
+        </div>
       </div>
     </div>
   );

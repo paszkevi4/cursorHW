@@ -8,14 +8,14 @@ const BtnBlock = (props) => {
         onClick={() => {
           props.clickHandler();
         }}>
-        Змiнити
+        {props.btnText ? props.btnText : 'Змiнити'}
       </a>
     </div>
   );
 };
 
 export const Card = (props) => {
-  const { title, text, hide, clickHandler } = props;
+  const { title, text, hide, clickHandler, btnText } = props;
 
   const textToP = (Text) => {
     return Text.map((el) => {
@@ -30,12 +30,14 @@ export const Card = (props) => {
   const innerText = textToP(text);
   return (
     <div className="col s4">
-      <div className="card ">
+      <div
+        className="card"
+        style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
         <div className="card-content">
           <p className="card-title">{title}</p>
           {innerText}
         </div>
-        {hide ? ' ' : <BtnBlock clickHandler={clickHandler} />}
+        {hide ? ' ' : <BtnBlock clickHandler={clickHandler} btnText={btnText} />}
       </div>
     </div>
   );

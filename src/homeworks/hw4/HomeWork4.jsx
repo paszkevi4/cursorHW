@@ -46,13 +46,15 @@ const markPairs = (pairs) => {
   return markedPairs;
 };
 
-console.log(
-  'newMade',
-  getPairs(),
-  combiner(getPairs(), themes),
-  markStudents(markedStudents),
-  markPairs(themedPairs),
-);
+// console.log needed for homework task
+
+// console.log(
+//   'newMade',
+//   getPairs(),
+//   combiner(getPairs(), themes),
+//   markStudents(markedStudents),
+//   markPairs(themedPairs),
+// );
 
 export const HomeWork4 = () => {
   return (
