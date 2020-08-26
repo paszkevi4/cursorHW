@@ -4,21 +4,22 @@ import { FontCard } from './FontCard';
 import { fontGenerator } from './generators';
 
 export const HomeWork13 = () => {
-  let [generatorValue, setGeneratorValue] = useState(0);
+  let [state, setState] = useState([]);
+
   let [fontSize, setFontSize] = useState(fontGenerator.next().value);
-  const state = useRef([]);
+  let generatorValue = useRef(0);
 
   function* infiniteGenerator() {
     while (true) {
-      setGeneratorValue(++generatorValue);
-      yield generatorValue;
+      generatorValue.current++;
+      yield generatorValue.current;
     }
   }
   const idGenerator = infiniteGenerator();
 
   const clickHandler = () => {
     let u = idGenerator.next().value;
-    state.current = [...state.current, u];
+    setState([...state, u]);
   };
 
   window.idGenerator = idGenerator;
@@ -29,7 +30,7 @@ export const HomeWork13 = () => {
     <div className="row">
       <Card
         title="Unique ID generator"
-        text={state.current}
+        text={state}
         clickHandler={clickHandler}
         btnText="Додати новий id"
       />

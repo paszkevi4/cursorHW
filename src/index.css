@@ -1,14 +1,14 @@
 body {
-    margin: 0;
-    padding: 0;
-    /*background: #708c98;*/
-    background: #fff;
+  margin: 0;
+  padding: 0;
+  /*background: #708c98;*/
+  background: #fff;
 }
 
 #root {
-    display: flex;
+  display: flex;
 }
 
 .main {
-    width: 95vw;
+  width: 100%;
 }

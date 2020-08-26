@@ -16,7 +16,7 @@ export const FontCard = (props) => {
   const { title, text, increase, decrease } = props;
 
   return (
-    <div className="col s4">
+    <div className="col s12 m6 l4">
       <div
         className="card"
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
