@@ -6,8 +6,8 @@ let instance = axios.create({
 
 export const getMoviesInfo = {};
 
-export const getPlanets = (page, wookiee) => {
+export const getPlanets = (page = 1, wookiee) => {
   return instance
-    .get(`planets/?page=1${wookiee ? '&format=wookiee' : ''}`)
+    .get(`planets/?page=${page}${wookiee ? '&format=wookiee' : ''}`)
     .then((response) => response.data);
 };

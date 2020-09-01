@@ -10,8 +10,10 @@ import { HomeWork6 } from './homeworks/hw6/HomeWork6';
 import { HomeWork7 } from './homeworks/hw7/HomeWork7';
 import { HomeWork8 } from './homeworks/hw8/HomeWork8';
 import { HomeWork9 } from './homeworks/hw9/HomeWork9';
-import { HomeWrork11 } from './homeworks/hw11/HomeWork11';
+import { HomeWork11 } from './homeworks/hw11/HomeWork11';
+import { HomeWork12 } from './homeworks/hw12/HomeWork12';
 import { HomeWork13 } from './homeworks/hw13/HomeWork13';
+import { HomeWork15 } from './homeworks/hw15/HomeWork15';
 
 function App() {
   return (
@@ -27,8 +29,10 @@ function App() {
         <Route path="/hw7" render={() => <HomeWork7 />} />
         <Route path="/hw8" render={() => <HomeWork8 />} />
         <Route path="/hw9" render={() => <HomeWork9 />} />
-        <Route path="/hw11" render={() => <HomeWrork11 />} />
+        <Route path="/hw11" render={() => <HomeWork11 />} />
+        <Route path="/hw12" render={() => <HomeWork12 />} />
         <Route path="/hw13" render={() => <HomeWork13 />} />
+        <Route path="/hw15" render={() => <HomeWork15 />} />
         <Route exact path="/">
           <Redirect to="/me" render={() => <TBA />} />
         </Route>

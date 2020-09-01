@@ -1,8 +1,8 @@
-const delay = () => {
+export const delay = (ms) => {
   return new Promise((res) =>
     setTimeout(() => {
       res();
-    }, 50),
+    }, ms),
   );
 };
 
@@ -15,7 +15,7 @@ export const getRandomChinese = async (length) => {
     for (let i = 0; i < length; i++) {
       const uniqueKey = Date.now().toString().substr(-5);
       result.push(String.fromCharCode(uniqueKey));
-      await delay();
+      await delay(50);
     }
   } catch {
     throw new Error('impossible error');

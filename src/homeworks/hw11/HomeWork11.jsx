@@ -1,7 +1,7 @@
 import React from 'react';
 import { getRandomChinese } from './functions.js';
 
-export const HomeWrork11 = () => {
+export const HomeWork11 = () => {
   return (
     <div>
       <div>HW 11</div>

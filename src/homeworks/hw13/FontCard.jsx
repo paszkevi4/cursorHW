@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Card, Button } from 'react-bootstrap';
+
 const BtnBlock = (props) => {
   return (
     <a
@@ -16,19 +18,33 @@ export const FontCard = (props) => {
   const { title, text, increase, decrease } = props;
 
   return (
-    <div className="col s12 m6 l4">
-      <div
+    <div className="col-sm-6">
+      <Card style={{ width: '18rem' }}>
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>{text}</Card.Text>
+          <Button clickHandler={decrease} btnText="-">
+            -
+          </Button>
+          <Button clickHandler={increase} btnText="+" />
+          <Button variant="primary">Primary</Button>{' '}
+        </Card.Body>
+      </Card>
+      ;
+      {/* <div
         className="card"
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-        <div className="card-content">
+        <div class="card-body">
           <p className="card-title">{title}</p>
-          <p style={{ fontSize: `${text}px` }}>{text}</p>
+          <p style={{ fontSize: `${text}px` }} class="card-text">
+            {text}
+          </p>
+          <div className="card-action" style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <BtnBlock clickHandler={decrease} btnText="-" />
+            <BtnBlock clickHandler={increase} btnText="+" />
+          </div>
         </div>
-        <div className="card-action" style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <BtnBlock clickHandler={decrease} btnText="-" />
-          <BtnBlock clickHandler={increase} btnText="+" />
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 };
