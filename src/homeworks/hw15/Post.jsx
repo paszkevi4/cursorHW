@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Card } from 'react-bootstrap';
 import {
   ArrowRight,
   At,
@@ -12,39 +13,50 @@ import {
 } from 'react-bootstrap-icons';
 import s from './style.module.sass';
 
-function Post({ author, content, image, date }) {
-  let { name, photo, nickname } = author;
+function Post({ author, content, image, date, liked, stats }) {
+  const { name, photo, nickname, checked } = author;
+  const { likes, comments, reposts } = stats;
+  let [Liked, setLiked] = useState(liked);
   return (
-    <div>
-      <div className={s.main}>
+    <Card className={s.card}>
+      <Card.Body className={s.body}>
         <div className={s.header}>
-          <div className={s.photo}>
-            <img src={photo} alt="" />
+          <div className={s.photo_container}>
+            <img src={photo} alt="avatar" className={s.avatar} />
           </div>
-          <div className={s.name}></div>
-          <div className={s.date}></div>
+          <div className={s.name__container}>
+            <span className={s.name}>{name}</span>
+            {checked ? <PatchCheckFll size={20} className={s.checked} /> : ''}
+            <span className={s.nickname}>{nickname}</span>
+          </div>
+          <div className={s.date}>
+            <span>{date}</span>
+          </div>
+        </div>
+        <div className={s.content}>
+          {content}
+          {image && <img src={image} alt="image" />}
         </div>
         <div className={s.footer}>
-          <div className={s.like}>
-            <HeartFill color="red" size={24} />
+          <div
+            className={s.like}
+            onClick={() => {
+              setLiked(!Liked);
+            }}>
+            {Liked ? <HeartFill color="red" size={24} /> : <Heart size={24} />}
+            <span>{!liked && Liked ? likes + 1 : liked && !Liked ? likes - 1 : likes}</span>
           </div>
           <div className={s.comments}>
             <ChatDots size={24} />
+            <span>{comments}</span>
           </div>
           <div className={s.repost}>
             <ReplyAllFill size={24} />
+            <span>{reposts}</span>
           </div>
         </div>
-      </div>
-      {/* <Heart />
-      <HeartFill color="red" size={96} />
-      <PatchCheckFll color="blue" size={96} />
-      <ChatDotsFill />
-      <ReplyAllFill />
-      <ReplyAll />
-      <At />
-      <ArrowRight /> */}
-    </div>
+      </Card.Body>
+    </Card>
   );
 }
 
